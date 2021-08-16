@@ -1,0 +1,552 @@
+{
+    "name": "ReceiveDeliveryType",
+    "type": "record",
+    "namespace": "Abs",
+    "fields": [
+        {
+            "name": "DocumentType",
+            "type": {
+                "name": "DocumentType",
+                "type": "record",
+                "fields": [
+                    {
+                        "name": "DocumentId",
+                        "type": "string"
+                    },
+                    {
+                        "name": "DocumentAltId",
+                        "type": "string"
+                    },
+                    {
+                        "name": "DocumentNm",
+                        "type": "string"
+                    },
+                    {
+                        "name": "SourceSystemNm",
+                        "type": "string"
+                    },
+                    {
+                        "name": "DataSensitivityType",
+                        "type": {
+                            "name": "CodeWithDescription",
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "name": "Code",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "Description",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "ActionType",
+                        "type": "CodeWithDescription"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "ReceiveDeliveryHeader",
+            "type": {
+                "name": "AbsReceiveDeliveryHeaderType",
+                "type": "record",
+                "fields": [
+                    {
+                        "name": "ReceiveId",
+                        "type": "int"
+                    },
+                    {
+                        "name": "AltReceiveId",
+                        "type": "int"
+                    },
+                    {
+                        "name": "ReceiveDt",
+                        "type": "string"
+                    },
+                    {
+                        "name": "ReceiveTm",
+                        "type": "string"
+                    },
+                    {
+                        "name": "ReceiveType",
+                        "type": "CodeWithDescription"
+                    },
+                    {
+                        "name": "ReceivedByType",
+                        "type": "CodeWithDescription"
+                    },
+                    {
+                        "name": "Invoice",
+                        "type": {
+                            "name": "Invoice",
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "name": "InvoiceNbr",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "InvoiceDt",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "InvoiceAmt",
+                                    "type": "float"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "PurchaseOrder",
+                        "type": {
+                            "name": "PurchaseOrder",
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "name": "PurchaseOrderNbr",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "PurchaseOrderDt",
+                                    "type": "int",
+                                    "logicalType": "date"
+                                },
+                                {
+                                    "name": "PurchaseOrderSource",
+                                    "type": "CodeWithDescription"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "ReferenceShipmentNbr",
+                        "type": "string"
+                    },
+                    {
+                        "name": "ShipFrom",
+                        "type": {
+                            "name": "ShipFrom",
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "name": "ShipFromFacilityType",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "ShipFromFacilityId",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "ShipFromFacilityNm",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "ShipFromDUNSNbr",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "ShipFromContact",
+                                    "type": {
+                                        "type": "array",
+                                        "items": {
+                                            "name": "ShipFromContact",
+                                            "type": "record",
+                                            "fields": [
+                                                {
+                                                    "name": "ContactNm",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "name": "PhoneNbr",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "name": "EmailAddresstxt",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "ShipFromAddress",
+                                    "type": {
+                                        "name": "Address",
+                                        "type": "record",
+                                        "fields": [
+                                            {
+                                                "name": "AddressLine1Txt",
+                                                "type": "string"
+                                            },
+                                            {
+                                                "name": "AddressLine2Txt",
+                                                "type": "string"
+                                            },
+                                            {
+                                                "name": "CityNm",
+                                                "type": "string"
+                                            },
+                                            {
+                                                "name": "PostalCd",
+                                                "type": "string"
+                                            },
+                                            {
+                                                "name": "StateCd",
+                                                "type": "string"
+                                            },
+                                            {
+                                                "name": "CountryCd",
+                                                "type": "string"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "ShipTo",
+                        "type": {
+                            "name": "ShipTo",
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "name": "ShipToFacilityType",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "ShipToFacilityId",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "ShipToFacilityNm",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "ShipToDUNSNbr",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "ShipToContact",
+                                    "type": {
+                                        "type": "array",
+                                        "items": {
+                                            "name": "ShipToContact",
+                                            "type": "record",
+                                            "fields": [
+                                                {
+                                                    "name": "ContactNm",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "name": "PhoneNbr",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "name": "EmailAddresstxt",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "ShipToAddress",
+                                    "type": "Address"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "FreeOnBoardText",
+                        "type": "string"
+                    },
+                    {
+                        "name": "DeliveredFreeOnBoardInd",
+                        "type": "string"
+                    },
+                    {
+                        "name": "TruckArrivalTs",
+                        "type": "string"
+                    },
+                    {
+                        "name": "GateInTs",
+                        "type": "string"
+                    },
+                    {
+                        "name": "UnloadStartTs",
+                        "type": "string"
+                    },
+                    {
+                        "name": "DroppedInd",
+                        "type": "string"
+                    },
+                    {
+                        "name": "VendorLeadTimeWks",
+                        "type": "int"
+                    },
+                    {
+                        "name": "TotalItemCnt",
+                        "type": "int"
+                    },
+                    {
+                        "name": "TotalCaseCount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "TotalUOMCount",
+                        "type": "int"
+                    },
+                    {
+                        "name": "ItemUOM",
+                        "type": "CodeWithDescription"
+                    },
+                    {
+                        "name": "TimeZone",
+                        "type": "CodeWithDescription"
+                    },
+                    {
+                        "name": "Vendor",
+                        "type": {
+                            "name": "Vendor",
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "name": "VendorId",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "VendorSubAccntId",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "WarehouseVendorId",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "BDRVendorId",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "VendorDUNSNbr",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "VendorNm",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "VendorContactNm",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "VendorContactPhoneNbr",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "VendorContactEmailTxt",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "VendorAddress",
+                                    "type": "Address"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "ReceiveDeliveryDetail",
+            "type": {
+                "name": "AbsReceiveDeliveryDetailType",
+                "type": "record",
+                "fields": [
+                    {
+                        "name": "LineNbr",
+                        "type": "int"
+                    },
+                    {
+                        "name": "ReceivedQuantity",
+                        "type": "float"
+                    },
+                    {
+                        "name": "ShippedQuantity",
+                        "type": "float"
+                    },
+                    {
+                        "name": "VendorCaseWgt",
+                        "type": "float"
+                    },
+                    {
+                        "name": "RandomWeightCd",
+                        "type": "string"
+                    },
+                    {
+                        "name": "DamagedQuantity",
+                        "type": "float"
+                    },
+                    {
+                        "name": "ItemDsc",
+                        "type": "string"
+                    },
+                    {
+                        "name": "ManufacturerItemID",
+                        "type": "string"
+                    },
+                    {
+                        "name": "MCLBRNbr",
+                        "type": "string"
+                    },
+                    {
+                        "name": "BranchItemCd",
+                        "type": "string"
+                    },
+                    {
+                        "name": "WarehouseItemId",
+                        "type": "string"
+                    },
+                    {
+                        "name": "CustomerItemID",
+                        "type": "string"
+                    },
+                    {
+                        "name": "UPCID",
+                        "type": "string"
+                    },
+                    {
+                        "name": "CaseUPCID",
+                        "type": "string"
+                    },
+                    {
+                        "name": "GTINID",
+                        "type": "string"
+                    },
+                    {
+                        "name": "OrderQty",
+                        "type": "float"
+                    },
+                    {
+                        "name": "UnitOfMeasurement",
+                        "type": "string"
+                    },
+                    {
+                        "name": "OverShortQty",
+                        "type": "float"
+                    },
+                    {
+                        "name": "CaseWt",
+                        "type": "float"
+                    },
+                    {
+                        "name": "CatchWt",
+                        "type": "float"
+                    },
+                    {
+                        "name": "CaseCubeVol",
+                        "type": "float"
+                    },
+                    {
+                        "name": "PackUnitQty",
+                        "type": "float"
+                    },
+                    {
+                        "name": "VendorConvFactor",
+                        "type": "float"
+                    },
+                    {
+                        "name": "ItemShelfUnitSize",
+                        "type": "string"
+                    },
+                    {
+                        "name": "VendorUnitCostAmt",
+                        "type": "float"
+                    },
+                    {
+                        "name": "UnitPrice",
+                        "type": {
+                            "name": "UnitPrice",
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "name": "Amt",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "PerQty",
+                                    "type": "int"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "PalletHeight",
+                        "type": "float"
+                    },
+                    {
+                        "name": "PalletLayerUnits",
+                        "type": "float"
+                    },
+                    {
+                        "name": "PalletNbr",
+                        "type": "string"
+                    },
+                    {
+                        "name": "LotNbr",
+                        "type": "string"
+                    },
+                    {
+                        "name": "ExpiryDt",
+                        "type": "int",
+                        "logicalType": "date"
+                    },
+                    {
+                        "name": "Allowances",
+                        "type": {
+                            "type": "array",
+                            "items": {
+                                "name": "Allowances",
+                                "type": "record",
+                                "fields": [
+                                    {
+                                        "name": "AllowanceOptionNbr",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "AllowanceExceptionNbr",
+                                        "type": "string"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "PurchaserId",
+                        "type": "string"
+                    },
+                    {
+                        "name": "PurchaserNm",
+                        "type": "string"
+                    },
+                    {
+                        "name": "PurchaserFacilityId",
+                        "type": "string"
+                    },
+                    {
+                        "name": "PurchaserPhoneNbr",
+                        "type": "string"
+                    },
+                    {
+                        "name": "BillingTypeCd",
+                        "type": "string"
+                    }
+                ]
+            }
+        }
+    ]
+}
